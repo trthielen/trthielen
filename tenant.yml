@@ -1,0 +1,14 @@
+---
+- hosts: 10.233.29.21
+  gather_facts: true
+  connection: local
+  
+  tasks:
+  - name: Add a new tenant
+    aci_tenant:
+      host: 10.233.29.21
+      username: admin
+      password: {{pwd}}
+      tenant: TT_TENANT
+      validate_certs: no
+      state: present
